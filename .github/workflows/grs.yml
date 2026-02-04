@@ -14,28 +14,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Prepare output directory
+        run: mkdir -p profile
+
       - name: Generate stats card
+        uses: cicirello/user-statistician@v1
         env:
-          GH_TOKEN: ${{ secrets.PAT_1 }}
-        run: |
-          mkdir -p profile
-          tmp_file=$(mktemp)
-          if curl -sS -H "Authorization: token ${GH_TOKEN}" \
-            "https://github-readme-stats.vercel.app/api?username=${{ github.repository_owner }}&show_icons=true&include_all_commits=true&count_private=true" \
-            -o "${tmp_file}"; then
-            if grep -q "<svg" "${tmp_file}"; then
-              mv "${tmp_file}" profile/stats.svg
-            else
-              echo "Invalid SVG response"
-              head -n 20 "${tmp_file}"
-              rm -f "${tmp_file}"
-              exit 1
-            fi
-          else
-            echo "Failed to fetch stats"
-            rm -f "${tmp_file}"
-            exit 1
-          fi
+          GITHUB_TOKEN: ${{ secrets.PAT_1 }}
+        with:
+          image-file: profile/stats.svg
 
       - name: Commit files
         run: |
