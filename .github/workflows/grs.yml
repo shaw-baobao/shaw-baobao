@@ -1,3 +1,6 @@
+permissions:
+  contents: write
+
 name: GitHub Readme Stats
 
 on:
