@@ -9,7 +9,7 @@
         aria-labelledby="descId"
       >
         <title id="titleId">shaw-baobao's GitHub Stats, Rank: A-</title>
-        <desc id="descId">Total Stars Earned: 64, Total Commits  : 3269, Total PRs: 388, Total Issues: 1, Contributed to (last year): 17</desc>
+        <desc id="descId">Total Stars Earned: 64, Total Commits  : 3271, Total PRs: 388, Total Issues: 1, Contributed to (last year): 17</desc>
         <style>
           .header {
             font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
@@ -73,7 +73,7 @@
         stroke-dashoffset: 251.32741228718345;
       }
       to {
-        stroke-dashoffset: 91.07171983891759;
+        stroke-dashoffset: 91.0657001227443;
       }
     }
   
